@@ -1,0 +1,34 @@
+﻿@model PriceTracker.Models.Product
+
+@{
+    ViewData["Title"] = "Update the product " + Model.ProductName;
+}
+
+
+
+<h4>Update the product @Model.ProductName</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="UpdateProduct">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input asp-for="ProductId" type="hidden" />
+
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label col-form-label-sm"></label>
+                <input asp-for="ProductName" class="form-control form-control-sm" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductLink" class="control-label col-form-label-sm"></label>
+                <input asp-for="ProductLink" class="form-control form-control-sm" />
+                <span asp-validation-for="ProductLink" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Update" class="btn btn-info btn-sm" /> &emsp;
+                <a asp-action="Index" class="btn btn-link btn-sm">Back to products</a>
+            </div>
+        </form>
+    </div>
+</div>

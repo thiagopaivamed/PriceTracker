@@ -1,0 +1,55 @@
+﻿@model IEnumerable<PriceTracker.Models.Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<p>
+    <a asp-action="NewProduct" class="btn btn-outline-success btn-sm">New Product</a>
+</p>
+<table class="table table-hover table-sm">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ProductLink)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductLink)
+            </td>
+            <td>
+                <div class="row">
+                    <a asp-controller="Products" asp-action="UpdateProduct" asp-route-productId="@item.ProductId" class="btn btn-primary btn-sm rounded-circle">
+                        <i class="fa fa-pencil-square-o"></i>
+                    </a>
+                    <a asp-controller="Products" asp-action="DetailsProduct" asp-route-productId="@item.ProductId" class="btn btn-secondary btn-sm rounded-circle">
+                        <i class="fa fa-tasks"></i>
+                    </a>
+                    <form asp-controller="Products" asp-action="DeleteProduct" asp-route-productId="@item.ProductId" onclick="confirm('Are you sure to delete the @item.ProductName product ?')">
+                        <button type="submit" class="btn btn-danger btn-sm rounded-circle"><i class="fa fa-times-circle"></i></button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceTracker", "PriceTracker\PriceTracker.csproj", "{8768E605-E903-4039-8E88-C827C097FC8E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8768E605-E903-4039-8E88-C827C097FC8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8768E605-E903-4039-8E88-C827C097FC8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8768E605-E903-4039-8E88-C827C097FC8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8768E605-E903-4039-8E88-C827C097FC8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {36D89EB7-EC44-4D5F-8328-271892D706F2}
+	EndGlobalSection
+EndGlobal

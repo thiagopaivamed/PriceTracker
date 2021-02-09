@@ -1,0 +1,20 @@
+CREATE TABLE Product (
+	ProductId SERIAL,
+	ProductName VARCHAR(100),
+	ProductLink TEXT,
+	PRIMARY KEY(ProductId)
+);
+
+CREATE TABLE ProductInformation(
+	ProductInformationId SERIAL,
+	ProductId INTEGER,
+	Value FLOAT,
+	Day INTEGER,
+	Month INTEGER,
+	Year INTEGER,
+	PRIMARY KEY (ProductInformationId),
+	CONSTRAINT Fk_ProductId FOREIGN KEY(ProductId)
+	REFERENCES Product (ProductId) MATCH SIMPLE
+	ON UPDATE NO ACTION
+	ON DELETE NO ACTION
+);

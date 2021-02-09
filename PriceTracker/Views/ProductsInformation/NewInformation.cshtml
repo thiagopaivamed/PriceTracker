@@ -1,0 +1,57 @@
+﻿@model PriceTracker.Models.ProductInformation
+
+@{
+    ViewData["Title"] = "New Information";
+}
+
+
+
+<h4>Niew Information</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="NewInformation">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                <input asp-for="ProductId" type="hidden" />
+               
+            <div class="form-group">
+                <label asp-for="Value" class="control-label col-form-label-sm"></label>
+                <input asp-for="Value" class="form-control form-control-sm" />
+                <span asp-validation-for="Value" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Day" class="control-label col-form-label-sm"></label>
+                <input asp-for="Day" class="form-control form-control-sm" />
+                <span asp-validation-for="Day" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Month" class="control-label col-form-label-sm"></label>
+                <select asp-for="Month" class="form-control form-control-sm">
+                    <option value="1">January</option>
+                    <option value="2">February</option>
+                    <option value="3">March</option>
+                    <option value="4">April</option>
+                    <option value="5">May</option>
+                    <option value="6">June</option>
+                    <option value="7">July</option>
+                    <option value="8">August</option>
+                    <option value="9">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <span asp-validation-for="Month" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Year" class="control-label col-form-label-sm"></label>
+                <input asp-for="Year" class="form-control form-control-sm" />
+                <span asp-validation-for="Year" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-outline-success btn-sm" /> &emsp;
+                <a asp-controller="Products" asp-action="DetailsProduct" asp-route-productId="@Model.ProductId" class="btn btn-link btn-sm">Back to product</a>
+            </div>
+        </form>
+    </div>
+</div>
